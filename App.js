@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import Header from './src/components/Header';
+import HomeScreen from './src/screens/HomeScreen';
+import SalonReservationScreen from './src/screens/SalonReservationScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const App = () => {
+    return (
+        <SafeAreaView style={styles.container}>
+            <Header />
+            <HomeScreen />
+            {/* Anda bisa menambahkan navigasi atau layar lainnya di sini */}
+            <SalonReservationScreen />
+        </SafeAreaView>
+    );
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+    },
 });
+
+export default App;
